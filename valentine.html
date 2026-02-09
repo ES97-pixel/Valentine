@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine?</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #ffe6eb;
+      margin-top: 100px;
+    }
+
+    h1 {
+      color: #d6336c;
+      font-size: 40px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background-color: #ccc;
+    }
+
+    #message {
+      display: none;
+      font-size: 28px;
+      color: #d6336c;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <button id="yes">Yes</button>
+  <button id="no">No</button>
+
+  <div id="message">Yaaay! Thank you ❤️</div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const message = document.getElementById("message");
+
+    // Move the "No" button when mouse goes near it
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 300 - 150;
+      const y = Math.random() * 200 - 100;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    // Show message when "Yes" is clicked
+    yesBtn.addEventListener("click", () => {
+      message.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
