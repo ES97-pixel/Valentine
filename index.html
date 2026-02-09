@@ -55,22 +55,32 @@
   <div id="message">Yaaay! Thank you ❤️</div>
 
   <script>
-    const noBtn = document.getElementById("no");
-    const yesBtn = document.getElementById("yes");
-    const message = document.getElementById("message");
+  const noBtn = document.getElementById("no");
+  const yesBtn = document.getElementById("yes");
+  const message = document.getElementById("message");
 
-    // Move the "No" button when mouse goes near it
-    noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * 300 - 150;
-      const y = Math.random() * 200 - 100;
-      noBtn.style.transform = `translate(${x}px, ${y}px)`;
-    });
+  function moveNoButton() {
+    const x = Math.random() * 300 - 150;
+    const y = Math.random() * 200 - 100;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  }
 
-    // Show message when "Yes" is clicked
-    yesBtn.addEventListener("click", () => {
-      message.style.display = "block";
-    });
-  </script>
+  // Computer mouse
+  noBtn.addEventListener("mouseover", moveNoButton);
+
+  // Phone touch
+  noBtn.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    moveNoButton();
+  });
+
+  // Yes button message
+  yesBtn.addEventListener("click", () => {
+    message.style.display = "block";
+  });
+</script>
+
 
 </body>
 </html>
+
